@@ -1,0 +1,67 @@
+name: iota_client
+sid: iota_client
+description: "IOTA client for sending transaction"
+tasks:
+  sendTransaction:
+    inputs:
+      address:
+        type: String
+      value:
+        type: Number
+      message:
+        type: String
+      tag:
+        type: String
+    outputs:
+      success:
+        data:
+          message:
+            type: String
+          transactionObject:
+            type: Object
+      error:
+        data:
+          messageError:
+            type: String
+  sendMessage:
+    inputs:
+      address:
+        type: String
+      message:
+        type: String
+      tag:
+        type: String
+    outputs:
+      success:
+        data:
+          message:
+            type: String
+          transactionObject:
+            type: Object
+      error:
+        data:
+          messageError:
+            type: String
+  readMessage:
+    inputs:
+      tag: 
+        type: String
+      seed : 
+        type: String
+    outputs:
+      success:
+        data:
+          transactionMessages:
+            type: Object
+            repeated: true
+      error:
+        data:
+          messageError:
+            type: String
+events:
+  transactionSended:
+    data:
+      hash:
+        type: String
+      time:
+        type: String

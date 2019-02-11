@@ -1,0 +1,10 @@
+{
+  "name": "iota mesg service",
+  "version": "1.0.0",
+  "main": "index.js",
+  "dependencies": {
+    "@iota/core": "^1.0.0-beta.8",
+    "iota.lib.js": "^0.5.1",
+    "mesg-js": "^2.0.1",
+  }
+}
