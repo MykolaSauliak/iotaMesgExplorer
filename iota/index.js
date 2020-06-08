@@ -1,5 +1,5 @@
 const tasks = require('./tasks');
-const mesg = require('mesg-js').service();
+const liteflow = new (require('@liteflow/service'))();
 
 // how to generate seed - https://iota.guide/seed/how-to-generate-iota-wallet-seed/
 // good article to read - https://brightinventions.pl/blog/iota-hello-world/
@@ -13,7 +13,7 @@ const mesg = require('mesg-js').service();
 //     }
 //  })
 
-mesg.listenTask({
+liteflow.listenTask({
     // handler function of taskX
     sendTransaction: tasks.sendTransaction,
     sendMessage: tasks.sendMessage,

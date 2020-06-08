@@ -4,7 +4,7 @@ const iota = new IOTA({
     host: 'https://nodes.thetangle.org',
     port: 443,
 })
-const mesg = require('mesg-js').service();
+const liteflow = new (require('@liteflow/service'))();
 
 
 // @TODO - send few transaction at once [input - array of transaction object]
@@ -32,7 +32,7 @@ module.exports = ({addressSender, address, value, message, tag }, { success, err
             })
 
             for (let i=0; i<transactions.length; i++){
-                mesg.emitEvent("transactionSended", {
+                liteflow.emitEvent("transactionSended", {
                     hash : transactions[i].hash,
                     time : transactions[i].timestamp
                   }).catch((err) => {
